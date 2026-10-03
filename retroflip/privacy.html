@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What RetroFlip does with your data, and with your Google account">
+    <link rel="canonical" href="https://lasopablo.github.io/retroflip/privacy.html">
+    <title>RetroFlip · Privacy policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --text: #e8e6e3;
+            --text-muted: #a3a3a3;
+            --accent: #f97316;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        ::selection { background: var(--accent); color: var(--bg); }
+
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 4rem 2rem;
+            line-height: 1.7;
+        }
+
+        .container { max-width: 640px; margin: 0 auto; }
+
+        .greeting {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .greeting a { color: inherit; text-decoration: none; }
+        .greeting a:hover { color: var(--accent); }
+
+        h1 { font-size: 2.25rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+
+        .updated {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 2.5rem;
+        }
+
+        h2 { font-size: 1.35rem; font-weight: 600; margin: 2.25rem 0 0.75rem; }
+
+        p, li { color: var(--text-muted); font-size: 1.05rem; }
+        p { margin-bottom: 1rem; }
+        ul { margin: 0 0 1rem 1.25rem; }
+        li { margin-bottom: 0.6rem; }
+
+        strong { color: var(--text); font-weight: 600; }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+            color: var(--text);
+        }
+
+        a { color: var(--text); text-underline-offset: 3px; transition: color 0.2s; }
+        a:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <p class="greeting"><a href="./">RetroFlip</a></p>
+        <h1>Privacy policy</h1>
+        <p class="updated">Last changed 3 October 2026</p>
+
+        <p>
+            RetroFlip is an Android app that turns a phone on a bedside table into a flip-clock dock. I,
+            Pablo Laso, wrote it for my own phone; it isn't sold or offered in any app store. It has no
+            server of its own, so nothing it handles is ever sent to me or to anyone acting for me.
+        </p>
+
+        <h2>Your Google account</h2>
+        <p>
+            RetroFlip only touches a Google account if you switch its security camera on and sign in
+            with Google. It then asks for three permissions, and uses each for one thing:
+        </p>
+        <ul>
+            <li>
+                <strong>Its own files in your Drive</strong> (<code>drive.file</code>). It makes a folder
+                called "RetroFlip camera", puts the camera's clips and snapshots in it, one folder per
+                event, and deletes each event for good, skipping the bin, within 30 hours. This
+                permission only reaches files RetroFlip made itself; the rest of your Drive stays out of
+                its sight.
+            </li>
+            <li>
+                <strong>Sending email as you</strong> (<code>gmail.send</code>). One alert per event, from
+                your address to your address, with a snapshot, the first clip and a link to the event's
+                folder, plus a test alert when you ask for one. It can't read, search or delete any of
+                your mail.
+            </li>
+            <li>
+                <strong>Your email address</strong> (<code>userinfo.email</code>). To show which account is
+                signed in, and to address the alerts.
+            </li>
+        </ul>
+        <p>
+            All of it goes straight from the phone to Google, inside your own account. The phone keeps
+            your email address in RetroFlip's settings; the access itself is held by Google Play services
+            on the phone, never by RetroFlip on a server. None of it is shared, sold, used for
+            advertising or used for anything beyond the above.
+        </p>
+        <p>
+            RetroFlip's use and transfer of information received from Google APIs adheres to the
+            <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+            including the Limited Use requirements.
+        </p>
+
+        <h2>The camera</h2>
+        <p>
+            The camera opens only while it's armed, which is while your iPhone is away from the home
+            Wi-Fi. It records video, never sound. To tell whether the iPhone is home, the dock looks for
+            it on the home network; that check never leaves the network. Clips wait in the app's private
+            storage until they're uploaded, and are deleted from the phone then, or within 30 hours if
+            they never go. A clip still recording when the iPhone comes back is thrown away unseen.
+        </p>
+        <p>
+            The optional live view is a password-protected page on the dock that shows frames only while
+            the camera is armed. It answers only through <a href="https://tailscale.com">Tailscale</a>,
+            between your own devices, encrypted, and never on the Wi-Fi itself.
+        </p>
+
+        <h2>What else leaves the phone</h2>
+        <ul>
+            <li>
+                <strong>The forecast and air quality:</strong> the phone's position, rounded to about a
+                kilometre, to <a href="https://open-meteo.com">Open-Meteo</a>, and for weather warnings to
+                the <a href="https://www.weather.gov/documentation/services-web-api">US National Weather Service</a>.
+            </li>
+            <li>
+                <strong>Travel times,</strong> if switched on: an event's address to Android's geocoder,
+                which is Google's, and the rounded position and the event's place to
+                <a href="https://routing.openstreetmap.de/about.html">routing.openstreetmap.de</a>.
+            </li>
+        </ul>
+        <p>
+            That's all. The voice is made on the phone, and the calendar, photos, sleep sounds and what's
+            playing are read there and never sent anywhere. There are no ads, no analytics, no tracking
+            and no account to make.
+        </p>
+
+        <h2>Stopping it</h2>
+        <p>
+            In RetroFlip's settings, under CAMERA, SIGN OUT stops anything more going to Google, and
+            switching the camera off stops the camera. To withdraw RetroFlip's access to your account
+            completely, remove it at
+            <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>.
+            RetroFlip deletes what it put in your Drive only while it's signed in, so after signing out,
+            delete the "RetroFlip camera" folder yourself if anything is left in it.
+        </p>
+
+        <h2>Changes and questions</h2>
+        <p>
+            If this policy changes, this page will show it, with a new date at the top. Questions are
+            welcome through any of the links at <a href="https://lasopablo.github.io/">lasopablo.github.io</a>.
+        </p>
+    </main>
+</body>
+</html>

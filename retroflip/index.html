@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RetroFlip, a flip-clock dock app for an Android phone">
+    <link rel="canonical" href="https://lasopablo.github.io/retroflip/">
+    <title>RetroFlip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --text: #e8e6e3;
+            --text-muted: #8a8a8a;
+            --accent: #f97316;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        ::selection { background: var(--accent); color: var(--bg); }
+
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            line-height: 1.7;
+        }
+
+        .container { max-width: 560px; width: 100%; }
+
+        .greeting {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+
+        .tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        p.body { color: var(--text-muted); margin-bottom: 1.25rem; font-size: 1.1rem; }
+
+        .links { display: flex; flex-wrap: wrap; gap: 1.25rem 2rem; margin-top: 2rem; }
+
+        .links a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .links a:hover { color: var(--accent); }
+
+        @media (max-width: 480px) { h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <p class="greeting">A flip clock for the bedside</p>
+        <h1>RetroFlip</h1>
+        <p class="tagline">Android · a personal project</p>
+        <p class="body">
+            An app that turns an Android phone on a bedside table into a flip-clock dock: the time from
+            across the room, the weather and the day's events, a spoken good morning, sleep sounds, and
+            an optional security camera that only watches while its owner's iPhone is away from home.
+        </p>
+        <p class="body">
+            It's written for my own phone and isn't in any app store. With the camera on, it can keep
+            clips in the owner's own Google Drive and send alerts from their own Gmail; the privacy
+            policy says exactly how.
+        </p>
+        <nav class="links">
+            <a href="privacy.html">Privacy policy</a>
+            <a href="https://lasopablo.github.io/">Pablo Laso</a>
+        </nav>
+    </main>
+</body>
+</html>
